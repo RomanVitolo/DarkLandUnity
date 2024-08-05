@@ -9,6 +9,7 @@ namespace Core.InputReader
     {
         public Vector2 MovementValue { get; private set; }
         public Vector2 MovementRotation { get; private set; }
+        public Vector2 MousePosition { get; private set; }
         
         public event Action OnJumpEvent;   
         
@@ -37,6 +38,11 @@ namespace Core.InputReader
         public void OnLook(InputAction.CallbackContext context)
         {
             MovementRotation = context.ReadValue<Vector2>();
+        }
+
+        public void OnAim(InputAction.CallbackContext context)
+        {
+            MousePosition = context.ReadValue<Vector2>();
         }
 
         public void DestroyControls() => _controls.Player.Disable();      
