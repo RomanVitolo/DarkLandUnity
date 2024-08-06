@@ -2126,6 +2126,9 @@ GameObject:
   - component: {fileID: 5243866026229334402}
   - component: {fileID: 9220134142749061132}
   - component: {fileID: 272483508533138754}
+  - component: {fileID: 6605941544024154861}
+  - component: {fileID: 3440520911560101003}
+  - component: {fileID: 2160760581022358212}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2206,13 +2209,81 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.76
-  m_Radius: 0.25
+  m_Height: 2
+  m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.025
+  m_StepOffset: 0.25
+  m_SkinWidth: 0.02
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.93, z: 0}
+--- !u!114 &6605941544024154861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352065638898950420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce5b37b16c2da0499199a4f4cf9f20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <AgentHealth>k__BackingField: {fileID: 11400000, guid: 23e2f1225653e1c469eb48118c922504, type: 2}
+  <InputReader>k__BackingField: {fileID: 11400000, guid: 137ef8b1d4a1fb24dadd16b15ec6a448, type: 2}
+  <AgentMovement>k__BackingField: {fileID: 11400000, guid: dcfa30b9653786f42b57384d3ee93190, type: 2}
+  <AgentCamera>k__BackingField: {fileID: 11400000, guid: 3fd091caa1cb0c94c8b4f9037dfce164, type: 2}
+  <AgentAnimator>k__BackingField: {fileID: 11400000, guid: f22c9118ad1af1f4aa69fb24c8ac28f2, type: 2}
+  _playerInput: {fileID: 2160760581022358212}
+--- !u!114 &3440520911560101003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352065638898950420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be6d69fc14744e0883f6adda672db32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Agent>k__BackingField: {fileID: 6605941544024154861}
+  TopClamp: 21.3
+  BottomClamp: -12
+  SpeedChangeRate: 10
+  SprintSpeed: 6
+  MoveSpeed: 3
+  cursorLocked: 1
+  cursorInputForLook: 1
+--- !u!114 &2160760581022358212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352065638898950420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a04d5f2ee5181e545b88dba715fd40ac, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &6442778959508268462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,7 +3044,7 @@ GameObject:
   - component: {fileID: 8477355797392842807}
   m_Layer: 0
   m_Name: Eyes
-  m_TagString: Untagged
+  m_TagString: CinemachineTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2987,7 +3058,7 @@ Transform:
   m_GameObject: {fileID: 9084993966154095081}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.847, z: -0.26}
+  m_LocalPosition: {x: 0.112, y: 1.754, z: 0.054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

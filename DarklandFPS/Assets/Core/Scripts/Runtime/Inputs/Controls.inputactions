@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Sprint",
+                    "type": "PassThrough",
+                    "id": "48a05153-f12f-4ac2-bcfe-2fdd6db9d580",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -49,7 +58,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -82,7 +91,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -93,7 +102,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -104,7 +113,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -115,7 +124,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -137,7 +146,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -148,7 +157,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -159,7 +168,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -170,7 +179,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -191,8 +200,8 @@
                     "id": "a1f648f8-a412-4373-8449-8eba1287cc5c",
                     "path": "<Pointer>/delta",
                     "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0.05,y=0.05)",
+                    "groups": "KeyboardMouse",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -214,8 +223,30 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Mouse & Keyboard",
+                    "groups": "KeyboardMouse",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a83aedc-7cbc-498f-939d-8341edd1810a",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9e4229e-5f0f-429e-9120-0fdb4efd16b7",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -224,8 +255,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Mouse & Keyboard",
-            "bindingGroup": "Mouse & Keyboard",
+            "name": "KeyboardMouse",
+            "bindingGroup": "KeyboardMouse",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",

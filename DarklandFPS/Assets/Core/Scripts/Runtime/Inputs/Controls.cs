@@ -64,6 +64,15 @@ namespace Core.InputReader
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""48a05153-f12f-4ac2-bcfe-2fdd6db9d580"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -73,7 +82,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -106,7 +115,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -117,7 +126,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -128,7 +137,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -139,7 +148,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -161,7 +170,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -172,7 +181,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -183,7 +192,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -194,7 +203,7 @@ namespace Core.InputReader
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -215,8 +224,8 @@ namespace Core.InputReader
                     ""id"": ""a1f648f8-a412-4373-8449-8eba1287cc5c"",
                     ""path"": ""<Pointer>/delta"",
                     ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""processors"": ""InvertVector2(invertX=false),ScaleVector2(x=0.05,y=0.05)"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -238,8 +247,30 @@ namespace Core.InputReader
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a83aedc-7cbc-498f-939d-8341edd1810a"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9e4229e-5f0f-429e-9120-0fdb4efd16b7"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -248,8 +279,8 @@ namespace Core.InputReader
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Mouse & Keyboard"",
-            ""bindingGroup"": ""Mouse & Keyboard"",
+            ""name"": ""KeyboardMouse"",
+            ""bindingGroup"": ""KeyboardMouse"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
@@ -282,6 +313,7 @@ namespace Core.InputReader
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
+            m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -347,6 +379,7 @@ namespace Core.InputReader
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Aim;
+        private readonly InputAction m_Player_Sprint;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -355,6 +388,7 @@ namespace Core.InputReader
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Aim => m_Wrapper.m_Player_Aim;
+            public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -376,6 +410,9 @@ namespace Core.InputReader
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -392,6 +429,9 @@ namespace Core.InputReader
                 @Aim.started -= instance.OnAim;
                 @Aim.performed -= instance.OnAim;
                 @Aim.canceled -= instance.OnAim;
+                @Sprint.started -= instance.OnSprint;
+                @Sprint.performed -= instance.OnSprint;
+                @Sprint.canceled -= instance.OnSprint;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -409,13 +449,13 @@ namespace Core.InputReader
             }
         }
         public PlayerActions @Player => new PlayerActions(this);
-        private int m_MouseKeyboardSchemeIndex = -1;
-        public InputControlScheme MouseKeyboardScheme
+        private int m_KeyboardMouseSchemeIndex = -1;
+        public InputControlScheme KeyboardMouseScheme
         {
             get
             {
-                if (m_MouseKeyboardSchemeIndex == -1) m_MouseKeyboardSchemeIndex = asset.FindControlSchemeIndex("Mouse & Keyboard");
-                return asset.controlSchemes[m_MouseKeyboardSchemeIndex];
+                if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("KeyboardMouse");
+                return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
             }
         }
         private int m_GamepadSchemeIndex = -1;
@@ -433,6 +473,7 @@ namespace Core.InputReader
             void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
+            void OnSprint(InputAction.CallbackContext context);
         }
     }
 }

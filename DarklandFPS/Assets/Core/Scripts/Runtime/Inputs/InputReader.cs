@@ -12,6 +12,8 @@ namespace Core.InputReader
         public Vector2 MousePosition { get; private set; }
         
         public event Action OnJumpEvent;   
+        public bool SprintPressed;   
+        public bool AnalogMovement;   
         
         private Controls _controls;
         
@@ -44,6 +46,13 @@ namespace Core.InputReader
         {
             MousePosition = context.ReadValue<Vector2>();
         }
+
+        public void OnSprint(InputAction.CallbackContext context)
+        {   
+            if (!context.performed) return;
+
+            SprintPressed = context.performed;
+        }     
 
         public void DestroyControls() => _controls.Player.Disable();      
     }
