@@ -2246,12 +2246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be6d69fc14744e0883f6adda672db32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Agent>k__BackingField: {fileID: 6605941544024154861}
   TopClamp: 21.3
   BottomClamp: -12
   SpeedChangeRate: 10
   SprintSpeed: 6
   MoveSpeed: 3
+  <Agent>k__BackingField: {fileID: 6605941544024154861}
   cursorLocked: 1
   cursorInputForLook: 1
 --- !u!114 &2160760581022358212
