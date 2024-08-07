@@ -1,27 +1,29 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.InputSystem;       
+using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Core.InputReader
 {
     [CreateAssetMenu(menuName = "Core/Inputs", fileName = "New Input Reader", order = 0)]
     public class InputReader : ScriptableObject, Controls.IPlayerActions
     {
+        [field: SerializeField] public bool CursorLocked { get; private set; } = true; 
+        [field: SerializeField] public bool CursorInputForLook { get; private set; } = true;
         public Vector2 MovementValue { get; private set; }
         public Vector2 MovementRotation { get; private set; }
         public Vector2 MousePosition { get; private set; }
         
         public event Action OnJumpEvent;   
-        public bool SprintPressed;   
         public bool AnalogMovement;   
         
-        private Controls _controls;
+        [field : SerializeField] public bool IsSprintPressed { get; private set; }   
+        private Controls _controls;       
         
         public void InitializeControls()
         {
             _controls = new Controls();
-            _controls.Player.SetCallbacks(this);
-            
+            _controls.Player.SetCallbacks(this);        
             _controls.Player.Enable();
         }                    
         
@@ -39,7 +41,8 @@ namespace Core.InputReader
 
         public void OnLook(InputAction.CallbackContext context)
         {
-            MovementRotation = context.ReadValue<Vector2>();
+            if (CursorInputForLook)  
+                MovementRotation = context.ReadValue<Vector2>();  
         }
 
         public void OnAim(InputAction.CallbackContext context)
@@ -48,11 +51,22 @@ namespace Core.InputReader
         }
 
         public void OnSprint(InputAction.CallbackContext context)
-        {   
-            if (!context.performed) return;
-
-            SprintPressed = context.performed;
-        }     
+        {
+            if (!context.ReadValueAsButton()) 
+                IsSprintPressed = false;
+            else            
+                SprintInput(context.performed);
+        }    
+        
+        private void SprintInput(bool newSprintState)
+        {
+            IsSprintPressed = newSprintState;
+        }
+        
+        public void SetCursorState(bool newState)
+        {
+            Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+        }                  
 
         public void DestroyControls() => _controls.Player.Disable();      
     }

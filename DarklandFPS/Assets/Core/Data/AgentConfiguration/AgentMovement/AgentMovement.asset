@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc340fb5809aa054c8a5381ce8d0f036, type: 3}
   m_Name: AgentMovement
   m_EditorClassIdentifier: 
-  <FreeLookMovementSpeed>k__BackingField: 4
-  <SmoothRotationSpeed>k__BackingField: 1
+  <freeLookMovementSpeed>k__BackingField: 4
+  <smoothRotationSpeed>k__BackingField: 1
+  <speedChangeRate>k__BackingField: 6
+  <sprintSpeed>k__BackingField: 10
   CharacterController: {fileID: 0}

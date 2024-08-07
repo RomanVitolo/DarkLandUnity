@@ -25,6 +25,7 @@ namespace Core.Scripts.Runtime.Agent
             AgentCamera.MainCamera = Camera.main;
             AgentCamera.CameraTarget = GameObject.FindWithTag("CinemachineTarget");
             AgentCamera.VirtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+            _playerInput = GetComponent<PlayerInput>();
         }
         
         #if ENABLE_INPUT_SYSTEM

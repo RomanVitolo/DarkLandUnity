@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d59b4f9194449868eb6627ab79547df, type: 3}
   m_Name: InputReader
   m_EditorClassIdentifier: 
+  <CursorLocked>k__BackingField: 1
+  <CursorInputForLook>k__BackingField: 1
+  SprintPressed: 0
+  AnalogMovement: 0
